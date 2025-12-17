@@ -54,14 +54,28 @@ else:
 def generate_pdf():
     temp = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf")
     c = canvas.Canvas(temp.name, pagesize=A4)
+
     w, h = A4
     y = h - 50
 
-    # ---------- LOGO ----------
+    # ---------- LOGO (TOP-LEFT, SMALL, ABOVE BORDER) ----------
+    logo_width = 60
+    logo_height = 30
 
-    
     if os.path.exists("download(18).png"):
-        c.drawImage("logo.png", 40, h - 90, 120, 50, preserveAspectRatio=True)
+        c.drawImage(
+            "download(18).png",
+            x=40,                      # left margin
+            y=h - logo_height - 20,    # top margin
+            width=logo_width,
+            height=logo_height,
+            preserveAspectRatio=True,
+            mask='auto'
+        )
+
+    # ---------- BORDER ----------
+    c.rect(30, 30, w - 60, h - 60)
+
 
     # ---------- HEADER ----------
     c.setFont("Helvetica-Bold", 20)
