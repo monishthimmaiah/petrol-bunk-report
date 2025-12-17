@@ -58,7 +58,9 @@ def generate_pdf():
     y = h - 50
 
     # ---------- LOGO ----------
-    if os.path.exists("logo.png"):
+
+    
+    if os.path.exists("download(18).png"):
         c.drawImage("logo.png", 40, h - 90, 120, 50, preserveAspectRatio=True)
 
     # ---------- HEADER ----------
