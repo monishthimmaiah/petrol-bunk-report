@@ -48,5 +48,5 @@ if st.button("Submit & View Summary"):
         "cash": cash,
         "digital": digital
     }
-    st.switch_page("/pages/Summary.py")
+    st.switch_page("pages/Summary.py")
     
