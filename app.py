@@ -18,6 +18,6 @@ if st.button("Login"):
     if username == USERNAME and password == PASSWORD:
         st.session_state.logged_in = True
         st.success("Login successful")
-        st.switch_page("pages/Details.py")
+        st.switch_page("Details.py")
     else:
         st.error("Invalid username or password")
